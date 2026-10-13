@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Pursuer : MonoBehaviour
 {
-    [SerializeField] private float _speed = 3.5f;
     [SerializeField] private float _stopDistance = 2.5f;
 
     private Player _player;
@@ -14,9 +13,10 @@ public class Pursuer : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Initialize(Player player)
+    public void Initialize(Player player, float speed)
     {
         _player = player;
+        _speed = speed;
     }
 
     private void Update()
