@@ -24,6 +24,7 @@ public class Pursuer : MonoBehaviour
         if (Vector3.Distance(transform.position, _player.transform.position) > _stopDistance)
         {
             Vector3 direction = (_player.transform.position - transform.position);
+            direction.y = 0f;
             direction.Normalize();
             float vertical = _rigidbody.velocity.y;            
             _rigidbody.velocity = direction * _speed + Vector3.up * vertical;
