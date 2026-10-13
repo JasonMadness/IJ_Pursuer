@@ -9,6 +9,8 @@ public class PlayerMover : MonoBehaviour
     private float _groundedStick = -2f;
     private float _verticalVelocity;
 
+    public float Speed => _speed;
+
     public void Move(Vector3 direction)
     {
         if (_characterController.isGrounded && _verticalVelocity < 0f)
