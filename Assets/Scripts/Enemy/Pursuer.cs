@@ -19,6 +19,11 @@ public class Pursuer : MonoBehaviour
         _player = player;
     }
 
+    private void Update()
+    {
+        transform.LookAt(_player.transform.position);
+    }
+
     private void FixedUpdate()
     {
         if (Vector3.Distance(transform.position, _player.transform.position) > _stopDistance)
@@ -29,7 +34,5 @@ public class Pursuer : MonoBehaviour
             float vertical = _rigidbody.velocity.y;            
             _rigidbody.velocity = direction * _speed + Vector3.up * vertical;
         }
-
-        transform.LookAt(_player.transform.position);
     }
 }
