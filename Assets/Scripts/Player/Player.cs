@@ -11,4 +11,9 @@ public class Player : MonoBehaviour
         _mover.Move(_input.Direction);
         _rotator.Rotate(_input.Look);
     }
+
+    public float GetMovementSpeed()
+    {
+        return _mover.Speed;
+    }
 }
