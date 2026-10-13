@@ -2668,22 +2668,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1699524105}
   - component: {fileID: 1699524104}
-  - component: {fileID: 1699524103}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MinimapCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1699524103
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699524102}
-  m_Enabled: 1
 --- !u!20 &1699524104
 Camera:
   m_ObjectHideFlags: 0
