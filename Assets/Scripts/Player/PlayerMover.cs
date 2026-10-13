@@ -7,6 +7,7 @@ public class PlayerMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        _characterController.Move(direction * _speed * Time.deltaTime);
+        Vector3 moveDirection = transform.TransformDirection(direction);
+        _characterController.Move(moveDirection * _speed * Time.deltaTime);
     }
 }
