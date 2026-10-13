@@ -1987,7 +1987,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 705507995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &130672478
@@ -2354,7 +2355,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 32316224}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &788044788
 GameObject:
@@ -2630,7 +2631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c6dba78bfcd774691b65996b8ede69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stopDistance: 1
+  _speed: 3.5
+  _stopDistance: 2.5
 --- !u!54 &1330693454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2655,8 +2657,8 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1699524102
 GameObject:
@@ -3187,11 +3189,10 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 705507995}
+  - {fileID: 1998922187}
   - {fileID: 32316224}
   - {fileID: 1803230698}
   - {fileID: 1330693452}
   - {fileID: 1727538722}
   - {fileID: 1773203399}
   - {fileID: 1699524105}
-  - {fileID: 1998922187}
