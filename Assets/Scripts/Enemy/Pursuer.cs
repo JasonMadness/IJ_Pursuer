@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Pursuer : MonoBehaviour
 {
-    [SerializeField] private float _minDistance = 1f;
+    [SerializeField] private float _stopDistance = 1f;
 
     private Player _player;
     private Rigidbody _rigidbody;
@@ -20,7 +20,7 @@ public class Pursuer : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, _player.transform.position) > _minDistance)
+        if (Vector3.Distance(transform.position, _player.transform.position) > _stopDistance)
         {
             _rigidbody.MovePosition(Vector3.Lerp(transform.position, _player.transform.position, Time.deltaTime));
         }
