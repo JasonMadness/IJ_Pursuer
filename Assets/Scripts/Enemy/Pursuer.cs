@@ -5,6 +5,7 @@ public class Pursuer : MonoBehaviour
 {
     [SerializeField] private float _stopDistance = 2.5f;
 
+    private float _speed;
     private Player _player;
     private Rigidbody _rigidbody;
 
