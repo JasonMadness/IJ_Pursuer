@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    private const string HORIZONTAL_AXIS = "Horizontal";
-    private const string VERTICAL_AXIS = "Vertical";
-    private const string MOUSE_X = "Mouse X";
-    private const string MOUSE_Y = "Mouse Y";
+    private const string HorizontalAxis = "Horizontal";
+    private const string VerticalAxis = "Vertical";
+    private const string MouseX = "Mouse X";
+    private const string MouseY = "Mouse Y";
 
     private Vector3 _direction;
     private Vector2 _look;
@@ -15,10 +15,9 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        float horizontal = Input.GetAxis(HORIZONTAL_AXIS);
-        float vertical = Input.GetAxis(VERTICAL_AXIS);
+        float horizontal = Input.GetAxis(HorizontalAxis);
+        float vertical = Input.GetAxis(VerticalAxis);
         _direction.Set(horizontal, 0f, vertical);
-
-        _look.Set(Input.GetAxis(MOUSE_X), Input.GetAxis(MOUSE_Y));
+        _look.Set(Input.GetAxis(MouseX), Input.GetAxis(MouseY));
     }
 }
