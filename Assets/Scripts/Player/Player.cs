@@ -6,14 +6,11 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMover _mover;
     [SerializeField] private PlayerRotator _rotator;
 
+    public float Speed => _mover.Speed;
+
     private void Update()
     {
         _mover.Move(_input.Direction);
         _rotator.Rotate(_input.Look);
-    }
-
-    public float GetMovementSpeed()
-    {
-        return _mover.Speed;
     }
 }
