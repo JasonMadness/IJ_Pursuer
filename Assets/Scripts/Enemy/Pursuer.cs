@@ -36,8 +36,8 @@ public class Pursuer : MonoBehaviour
             Vector3 direction = toPlayer.normalized;
 
             Vector3 normal = GetGroundNormal();
-            direction = Vector3.ProjectOnPlane(direction, normal).normalized;
-
+            direction = Vector3.ProjectOnPlane(direction, normal);
+            direction.y = 0f;
             float vertical = _rigidbody.velocity.y;
             _rigidbody.velocity = direction * _speed + Vector3.up * vertical;
         }
