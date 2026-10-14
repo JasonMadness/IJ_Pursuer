@@ -27,11 +27,12 @@ public class Pursuer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, _player.transform.position) > _stopDistance)
+        Vector3 toPlayer = _player.transform.position - transform.position;
+        toPlayer.y = 0f;
+
+        if (toPlayer.sqrMagnitude > _stopDistance * _stopDistance)
         {
-            Vector3 direction = (_player.transform.position - transform.position);
-            direction.y = 0f;
-            direction.Normalize();
+            Vector3 direction = toPlayer.normalized;
             float vertical = _rigidbody.velocity.y;            
             _rigidbody.velocity = direction * _speed + Vector3.up * vertical;
         }
