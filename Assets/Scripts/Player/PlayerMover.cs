@@ -21,7 +21,7 @@ public class PlayerMover : MonoBehaviour
 
         Vector3 worldDirection = transform.TransformDirection(direction);
         Vector3 normal = GetGroundNormal();
-        worldDirection = Vector3.ProjectOnPlane(worldDirection, normal).normalized;
+        worldDirection = Vector3.ProjectOnPlane(worldDirection, normal);
 
         Vector3 velocity = worldDirection * _speed + Vector3.up * _verticalVelocity;
         _characterController.Move(velocity * Time.deltaTime);
