@@ -4,10 +4,11 @@ using UnityEngine;
 public class Pursuer : MonoBehaviour
 {
     [SerializeField] private float _stopDistance = 2.5f;
+    [SerializeField] private float _groundCheckDistance = 1.2f;
 
-    private float _speed;
     private Player _player;
     private Rigidbody _rigidbody;
+    private float _speed;
 
     private void Awake()
     {
@@ -33,8 +34,20 @@ public class Pursuer : MonoBehaviour
         if (toPlayer.sqrMagnitude > _stopDistance * _stopDistance)
         {
             Vector3 direction = toPlayer.normalized;
-            float vertical = _rigidbody.velocity.y;            
+
+            Vector3 normal = GetGroundNormal();
+            direction = Vector3.ProjectOnPlane(direction, normal).normalized;
+
+            float vertical = _rigidbody.velocity.y;
             _rigidbody.velocity = direction * _speed + Vector3.up * vertical;
         }
+    }
+
+    private Vector3 GetGroundNormal()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _groundCheckDistance))
+            return hit.normal;
+
+        return Vector3.up;
     }
 }
